@@ -257,7 +257,8 @@ void FretDiagram::draw(QPainter* painter) const
                   }
             }
       if (_fretOffset > 0) {
-            qreal fretNumScale = 2.0; // TODO: get this from preferences or style settings
+            QString fretString = QString("%1").arg(_fretOffset+1);
+            qreal fretNumScale = 2.5;  // rz: even bigger, was 2.0
             QFont biggerFont(font);
             biggerFont.setPixelSize(font.pixelSize() * fretNumScale);
             painter->setFont(biggerFont);
